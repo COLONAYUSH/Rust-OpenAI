@@ -32,9 +32,7 @@ async fn main (){
    let https = HttpsConnector :: new ( ) ;
    let client = Client :: builder ( ) . build ( https ) ;
    let uri = " https://api.openai.com/v1/engines/text-davinci-001/completions";
-   let preamble = "Answer the following question
-   accurately , but find a funny way to mention
-   the Rust programming language in your response";
+   let preamble = "Generate a Sql code for the given statement";
 
    let oai_token : String = env :: var ( " OAI_TOKEN " ) . unwrap ( ) ;
    let auth_header_val = format ! ( " Bearer { } " , oai_token ) ;
